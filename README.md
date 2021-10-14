@@ -2,6 +2,10 @@
 
 Web app to view the weather developed on React.js
 
+The web application is available at this link <https://react-weather-grabovsky.herokuapp.com/>
+
+![screenshot](screenshot.png)
+
 ## Install the dependencies
 
 ```sh
