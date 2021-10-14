@@ -2,17 +2,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Form } from './components/Form/Form';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   return (
-    <div>
+    <>
       <header>
         <Navbar />
       </header>
       <main className="container mt-5">
         <Form />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
 
