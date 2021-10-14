@@ -6,7 +6,7 @@ import { Result } from '../Result';
 
 function Form(props) {
   const API_KEY = process.env['REACT_APP_WEATHER_KEY'];
-  const url = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=`;
   const errorMessages = {
     '400': 'City not found, maybe you entered the wrong city name. Correct the error and try again.'
   };
