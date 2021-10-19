@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render correctly footer component 1`] = `
+<footer
+  className="footer py-3 bg-dark"
+>
+  <div
+    className="container"
+  >
+    <span>
+      Copyright © 
+      2021
+    </span>
+    <span>
+        |  All rights reserved  |  
+    </span>
+    <a
+      className="link"
+      href="https://github.com/sk1t0n/react-weather"
+    >
+      Anton Grabovsky
+    </a>
+  </div>
+</footer>
+`;
