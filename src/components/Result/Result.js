@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader } from './Loader/Loader';
+import { Loader } from '../Loader/Loader';
 import Alert from 'react-bootstrap/Alert';
 
 function Result(props) {

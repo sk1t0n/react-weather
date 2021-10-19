@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import FormBootstrap from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import styles from './Form.module.css';
-import { Result } from '../Result';
+import { Result } from '../Result/Result';
 
 function Form(props) {
   const API_KEY = process.env['REACT_APP_WEATHER_KEY'];

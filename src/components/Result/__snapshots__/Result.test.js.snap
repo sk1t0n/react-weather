@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with default props 1`] = `
+<div
+  className="mt-5"
+/>
+`;
+
+exports[`renders correctly with error 1`] = `
+<div
+  className="mt-5"
+>
+  <div
+    className="fade alert alert-danger show"
+    role="alert"
+  >
+    error
+  </div>
+</div>
+`;
+
+exports[`renders correctly with isLoading as true 1`] = `
+<div
+  className="mt-5"
+>
+  <div
+    className="lds-dual-ring"
+  />
+</div>
+`;
+
+exports[`renders correctly with temperature 1`] = `
+<div
+  className="mt-5"
+>
+  <div
+    className="fade alert alert-info show"
+    role="alert"
+  >
+    <p>
+      Temperature in degrees:
+      <span
+        className="float-end"
+      >
+        0
+         ℃
+      </span>
+    </p>
+    <p>
+      Temperature in fahrenheit:
+      <span
+        className="float-end"
+      >
+        32
+         ℉
+      </span>
+    </p>
+  </div>
+</div>
+`;
