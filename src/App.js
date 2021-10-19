@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Navbar } from './components/Navbar';
+import { Navbar } from './components/Navbar/Navbar';
 import { Form } from './components/Form/Form';
 import { Footer } from './components/Footer/Footer';
 
