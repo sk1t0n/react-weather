@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
+import styles from './Form.module.css';
 import FormBootstrap from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import styles from './Form.module.css';
-import { Result } from '../Result/Result';
+import { Result } from '../Result';
 
 function Form(props) {
   const API_KEY = process.env['REACT_APP_WEATHER_KEY'];
@@ -52,7 +52,7 @@ function Form(props) {
   }
 
   return (
-    <FormBootstrap className={styles.Form}>
+    <FormBootstrap className={styles.form}>
       <FormBootstrap.Group className="mb-3" controlId="city">
         <FormBootstrap.Label>City</FormBootstrap.Label>
         <FormBootstrap.Control ref={inputRef} type="text" placeholder="Enter city" />

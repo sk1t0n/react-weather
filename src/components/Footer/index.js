@@ -1,6 +1,6 @@
 import React from 'react';
+import './styles.scss';
 import { Container } from 'react-bootstrap';
-import './Footer.scss';
 
 function Footer() {
   const author = 'Anton Grabovsky';

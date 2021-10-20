@@ -1,6 +1,6 @@
 import React from 'react';
-import { Loader } from '../Loader/Loader';
 import Alert from 'react-bootstrap/Alert';
+import { Loader } from '../Loader';
 
 function Result(props) {
   const { isLoading, error, temperature } = props;

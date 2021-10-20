@@ -1,9 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Loader } from './Loader';
+import { Loader } from './index';
 
-test('Render correctly loader component', () => {
-  const component = renderer.create(<Loader />);
-  let tree = component.toJSON();
+test('renders correctly loader component', () => {
+  const tree = renderer.create(<Loader />).toJSON();
   expect(tree).toMatchSnapshot();
 });

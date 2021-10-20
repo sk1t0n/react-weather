@@ -5,3 +5,9 @@ exports[`Render correctly loader component 1`] = `
   className="lds-dual-ring"
 />
 `;
+
+exports[`renders correctly loader component 1`] = `
+<div
+  className="lds-dual-ring"
+/>
+`;

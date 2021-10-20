@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Result } from './Result';
+import { Result } from './index';
 
 const defaultProps = {
   isLoading: false,
