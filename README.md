@@ -1,6 +1,6 @@
 # React-Weather
 
-![status master branch](https://github.com/sk1t0n/react-weather/actions/workflows/main.yml/badge.svg?branch=master)
+[![CI](https://github.com/sk1t0n/react-weather/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/sk1t0n/react-weather/actions/workflows/main.yml)
 
 Web app to view the weather developed on React.js
 
