@@ -1,43 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly form component 1`] = `
-<form
-  className="form"
->
-  <div
-    className="mb-3"
+<DocumentFragment>
+  <form
+    class="form"
   >
-    <label
-      className="form-label"
-      htmlFor="city"
+    <div
+      class="mb-3"
     >
-      City
-    </label>
-    <input
-      className="form-control"
-      id="city"
-      placeholder="Enter city"
-      type="text"
+      <label
+        class="form-label"
+        for="city"
+      >
+        City
+      </label>
+      <input
+        class="form-control"
+        id="city"
+        placeholder="Enter city"
+        type="text"
+      />
+    </div>
+    <button
+      class="btn btn-primary"
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      class="mx-3 btn btn-warning"
+      type="reset"
+    >
+      Reset
+    </button>
+    <div
+      class="mt-5"
     />
-  </div>
-  <button
-    className="btn btn-primary"
-    disabled={false}
-    onClick={[Function]}
-    type="submit"
-  >
-    Submit
-  </button>
-  <button
-    className="mx-3 btn btn-warning"
-    disabled={false}
-    onClick={[Function]}
-    type="reset"
-  >
-    Reset
-  </button>
-  <div
-    className="mt-5"
-  />
-</form>
+  </form>
+</DocumentFragment>
 `;

@@ -1,97 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render correctly navbar component 1`] = `
-<nav
-  className="navbar navbar-expand-sm navbar-dark bg-dark"
->
-  <div
-    className="container"
-  >
-    <a
-      className="navbar-brand"
-      href="/"
-    >
-      React-Weather
-    </a>
-    <button
-      aria-controls="basic-navbar-nav"
-      aria-label="Toggle navigation"
-      className="navbar-toggler collapsed"
-      onClick={[Function]}
-      type="button"
-    >
-      <span
-        className="navbar-toggler-icon"
-      />
-    </button>
-    <div
-      aria-expanded={null}
-      className="navbar-collapse collapse"
-      id="basic-navbar-nav"
-    >
-      <div
-        className="me-auto navbar-nav"
-        onKeyDown={[Function]}
-      >
-        <a
-          className="nav-link"
-          data-rr-ui-event-key="/"
-          disabled={false}
-          href="/"
-          onClick={[Function]}
-        >
-          Home
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
-`;
-
 exports[`renders correctly navbar component 1`] = `
-<nav
-  className="navbar navbar-expand-sm navbar-dark bg-dark"
->
-  <div
-    className="container"
+<DocumentFragment>
+  <nav
+    class="navbar navbar-expand-sm navbar-dark bg-dark"
   >
-    <a
-      className="navbar-brand"
-      href="/"
-    >
-      React-Weather
-    </a>
-    <button
-      aria-controls="basic-navbar-nav"
-      aria-label="Toggle navigation"
-      className="navbar-toggler collapsed"
-      onClick={[Function]}
-      type="button"
-    >
-      <span
-        className="navbar-toggler-icon"
-      />
-    </button>
     <div
-      aria-expanded={null}
-      className="navbar-collapse collapse"
-      id="basic-navbar-nav"
+      class="container"
     >
-      <div
-        className="me-auto navbar-nav"
-        onKeyDown={[Function]}
+      <a
+        class="navbar-brand"
+        href="/"
       >
-        <a
-          className="nav-link"
-          data-rr-ui-event-key="/"
-          disabled={false}
-          href="/"
-          onClick={[Function]}
+        React-Weather
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        class="navbar-toggler collapsed"
+        type="button"
+      >
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          class="me-auto navbar-nav"
         >
-          Home
-        </a>
+          <a
+            class="nav-link"
+            data-rr-ui-event-key="/"
+            href="/"
+          >
+            Home
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</DocumentFragment>
 `;

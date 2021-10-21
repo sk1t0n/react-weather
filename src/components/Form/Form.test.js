@@ -1,64 +1,65 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Form } from './index';
 
-test('renders correctly form component', () => {
-  const tree = renderer.create(<Form />).toJSON();
-  expect(tree).toMatchSnapshot();
+it('renders correctly form component', () => {
+  const { asFragment } = render(<Form />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
-afterEach(() => {
-  jest.restoreAllMocks();
-});
+describe('Testing DOM', () => {
+  global.fetch = jest.fn();
 
-test('submit valid data', async () => {
-  jest.spyOn(global, 'fetch').mockResolvedValue({
-    ok: true,
-    json: jest.fn().mockResolvedValue({ temp_c: 0, temp_f: 32 })
+  afterEach(() => {
+    fetch.mockClear();
   });
 
-  render(<Form />);
-  fireEvent.input(screen.getByPlaceholderText('Enter city'), {
-    target: {
-      value: 'Moscow'
-    }
-  });
-  await waitFor(() => {
-    fireEvent.click(screen.getByText('Submit'));
+  it('submit valid data', async () => {
+    global.fetch = jest.fn(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ temp_c: 0, temp_f: 32 })
+    }));
+
+    render(<Form />);
+    userEvent.type(
+      screen.getByPlaceholderText('Enter city'),
+      'Moscow'
+    );
+    await waitFor(() => {
+      userEvent.click(screen.getByText('Submit'));
+    });
+
+    expect(screen.getByRole('alert')).toHaveTextContent('Temperature');
   });
 
-  expect(screen.getByRole('alert')).toHaveTextContent('Temperature');
-});
+  it('submit invalid data', async () => {
+    global.fetch = jest.fn(() => Promise.resolve({
+      ok: false,
+      status: '400'
+    }));
 
-test('submit invalid data', async () => {
-  jest.spyOn(global, 'fetch').mockResolvedValue({
-    ok: false,
-    status: '400'
+    render(<Form />);
+    userEvent.type(
+      screen.getByPlaceholderText('Enter city'),
+      'Invalid city'
+    );
+    await waitFor(() => {
+      userEvent.click(screen.getByText('Submit'));
+    });
+
+    expect(screen.getByRole('alert')).toHaveTextContent('City not found');
   });
 
-  render(<Form />);
-  fireEvent.input(screen.getByPlaceholderText('Enter city'), {
-    target: {
-      value: 'Invalid city'
-    }
+  it('click the reset button', async () => {
+    render(<Form />);
+    userEvent.type(
+      screen.getByPlaceholderText('Enter city'),
+      'Moscow'
+    );
+    
+    expect(screen.getByDisplayValue('Moscow')).toBeInTheDocument();
+    userEvent.click(screen.getByText('Reset'));
+    expect(screen.queryByDisplayValue('Moscow')).toBeNull();
   });
-  await waitFor(() => {
-    fireEvent.click(screen.getByText('Submit'));
-  });
-
-  expect(screen.getByRole('alert')).toHaveTextContent('City not found');
-});
-
-test('click the reset button', async () => {
-  render(<Form />);
-  fireEvent.input(screen.getByPlaceholderText('Enter city'), {
-    target: {
-      value: 'Moscow'
-    }
-  });
-  
-  expect(screen.getByDisplayValue('Moscow')).toBeInTheDocument();
-  fireEvent.click(screen.getByText('Reset'));
-  expect(screen.queryByDisplayValue('Moscow')).toBeNull();
 });

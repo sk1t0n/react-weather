@@ -1,8 +1,8 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Footer } from './index';
 
-test('renders correctly footer component', () => {
-  const tree = renderer.create(<Footer />).toJSON();
-  expect(tree).toMatchSnapshot();
+it('renders correctly footer component', () => {
+  const { asFragment } = render(<Footer />);
+  expect(asFragment()).toMatchSnapshot();
 });

@@ -1,60 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly with default props 1`] = `
-<div
-  className="mt-5"
-/>
+<DocumentFragment>
+  <div
+    class="mt-5"
+  />
+</DocumentFragment>
 `;
 
 exports[`renders correctly with error 1`] = `
-<div
-  className="mt-5"
->
+<DocumentFragment>
   <div
-    className="fade alert alert-danger show"
-    role="alert"
+    class="mt-5"
   >
-    error
+    <div
+      class="fade alert alert-danger show"
+      role="alert"
+    >
+      error
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`renders correctly with isLoading as true 1`] = `
-<div
-  className="mt-5"
->
+<DocumentFragment>
   <div
-    className="lds-dual-ring"
-  />
-</div>
+    class="mt-5"
+  >
+    <div
+      class="lds-dual-ring"
+    />
+  </div>
+</DocumentFragment>
 `;
 
 exports[`renders correctly with temperature 1`] = `
-<div
-  className="mt-5"
->
+<DocumentFragment>
   <div
-    className="fade alert alert-info show"
-    role="alert"
+    class="mt-5"
   >
-    <p>
-      Temperature in degrees:
-      <span
-        className="float-end"
-      >
-        0
-         ℃
-      </span>
-    </p>
-    <p>
-      Temperature in fahrenheit:
-      <span
-        className="float-end"
-      >
-        32
-         ℉
-      </span>
-    </p>
+    <div
+      class="fade alert alert-info show"
+      role="alert"
+    >
+      <p>
+        Temperature in degrees:
+        <span
+          class="float-end"
+        >
+          0 ℃
+        </span>
+      </p>
+      <p>
+        Temperature in fahrenheit:
+        <span
+          class="float-end"
+        >
+          32 ℉
+        </span>
+      </p>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

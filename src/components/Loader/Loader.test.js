@@ -1,8 +1,8 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Loader } from './index';
 
-test('renders correctly loader component', () => {
-  const tree = renderer.create(<Loader />).toJSON();
-  expect(tree).toMatchSnapshot();
+it('renders correctly loader component', () => {
+  const { asFragment } = render(<Loader />);
+  expect(asFragment()).toMatchSnapshot();
 });

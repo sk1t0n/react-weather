@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './index';
 
-test('renders Navbar', () => {
+it('renders Navbar', () => {
   render(<App />);
   const linkElement = screen.getByText(/React-Weather/i);
   expect(linkElement).toBeInTheDocument();

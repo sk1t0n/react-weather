@@ -16,12 +16,14 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "react-test-renderer": "^17.0.2"
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "identity-obj-proxy": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test -- --updateSnapshot --all",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

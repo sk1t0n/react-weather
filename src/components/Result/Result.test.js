@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import { Result } from './index';
 
 const defaultProps = {
@@ -8,46 +8,46 @@ const defaultProps = {
   temperature: null
 };
 
-test('renders correctly with default props', () => {
-  const tree = renderer.create(
+it('renders correctly with default props', () => {
+  const { asFragment } = render(
     <Result
       isLoading={defaultProps.isLoading}
       error={defaultProps.error}
       temperature={defaultProps.temperature}
     />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
-test('renders correctly with isLoading as true', () => {
-  const tree = renderer.create(
+it('renders correctly with isLoading as true', () => {
+  const { asFragment } = render(
     <Result
       isLoading={true}
       error={defaultProps.error}
       temperature={defaultProps.temperature}
     />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
-test('renders correctly with error', () => {
-  const tree = renderer.create(
+it('renders correctly with error', () => {
+  const { asFragment } = render(
     <Result
       isLoading={defaultProps.isLoading}
       error={'error'}
       temperature={defaultProps.temperature}
     />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
 
-test('renders correctly with temperature', () => {
-  const tree = renderer.create(
+it('renders correctly with temperature', () => {
+  const { asFragment } = render(
     <Result
       isLoading={defaultProps.isLoading}
       error={defaultProps.error}
       temperature={{ temp_c: 0, temp_f: 32 }}
     />
-  ).toJSON();
-  expect(tree).toMatchSnapshot();
+  );
+  expect(asFragment()).toMatchSnapshot();
 });
