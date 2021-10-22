@@ -20,3 +20,12 @@ main {
 }
 
 /************************/
+
+/** utils **/
+
+.max-width-600_center {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/***********/

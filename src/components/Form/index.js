@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import styles from './Form.module.css';
 import FormBootstrap from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Result } from '../Result';
@@ -52,21 +51,23 @@ function Form(props) {
   }
 
   return (
-    <FormBootstrap className={styles.form}>
-      <FormBootstrap.Group className="mb-3" controlId="city">
-        <FormBootstrap.Label>City</FormBootstrap.Label>
-        <FormBootstrap.Control ref={inputRef} type="text" placeholder="Enter city" />
-      </FormBootstrap.Group>
+    <div className="max-width-600_center">
+      <FormBootstrap className="border rounded p-4">
+        <FormBootstrap.Group className="mb-3" controlId="city">
+          <FormBootstrap.Label>City</FormBootstrap.Label>
+          <FormBootstrap.Control ref={inputRef} type="text" placeholder="Enter city" />
+        </FormBootstrap.Group>
 
-      <Button onClick={handleSubmit} variant="primary" type="submit">
-        Submit
-      </Button>
-      <Button onClick={handleReset} variant="warning" className="mx-3" type="reset">
-        Reset
-      </Button>
-      
+        <Button onClick={handleSubmit} variant="primary" type="submit">
+          Submit
+        </Button>
+        <Button onClick={handleReset} variant="warning" className="mx-3" type="reset">
+          Reset
+        </Button>
+        
+      </FormBootstrap>
       <Result isLoading={isLoading} error={error} temperature={temperature} />
-    </FormBootstrap>
+    </div>
   );
 }
 
