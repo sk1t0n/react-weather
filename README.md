@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/sk1t0n/react-weather/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/sk1t0n/react-weather/actions/workflows/main.yml)
 
-Web app to view the weather developed on React.js
+Web app to view the weather developed on React.js (React Hooks, React Router, React Testing Library, React Bootstrap).
 
 The web application is available at this link <https://react-weather-grabovsky.herokuapp.com/>
 
