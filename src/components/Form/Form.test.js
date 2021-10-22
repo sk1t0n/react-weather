@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Form } from './index';
 
@@ -26,11 +26,8 @@ describe('Testing DOM', () => {
       screen.getByPlaceholderText('Enter city'),
       'Moscow'
     );
-    await waitFor(() => {
-      userEvent.click(screen.getByText('Submit'));
-    });
-
-    expect(screen.getByRole('alert')).toHaveTextContent('Temperature');
+    userEvent.click(screen.getByText('Submit'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Temperature');
   });
 
   it('submit invalid data', async () => {
@@ -44,11 +41,8 @@ describe('Testing DOM', () => {
       screen.getByPlaceholderText('Enter city'),
       'Invalid city'
     );
-    await waitFor(() => {
-      userEvent.click(screen.getByText('Submit'));
-    });
-
-    expect(screen.getByRole('alert')).toHaveTextContent('City not found');
+    userEvent.click(screen.getByText('Submit'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('City not found');
   });
 
   it('click the reset button', async () => {
