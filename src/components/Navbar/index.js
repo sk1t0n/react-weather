@@ -4,7 +4,6 @@ import { Container, Nav } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 
 const isActive = (location, path) => {
-  console.log(location.pathname)
   if (path === '/' && location.pathname === '/') {
     return true;
   } else {
@@ -42,4 +41,4 @@ function Navbar(props) {
   );
 }
 
-export { Navbar };
+export { Navbar, isActive };
