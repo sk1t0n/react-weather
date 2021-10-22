@@ -2,40 +2,44 @@
 
 exports[`renders correctly form component 1`] = `
 <DocumentFragment>
-  <form
-    class="form"
+  <div
+    class="max-width-600_center"
   >
-    <div
-      class="mb-3"
+    <form
+      class="border rounded p-4"
     >
-      <label
-        class="form-label"
-        for="city"
+      <div
+        class="mb-3"
       >
-        City
-      </label>
-      <input
-        class="form-control"
-        id="city"
-        placeholder="Enter city"
-        type="text"
-      />
-    </div>
-    <button
-      class="btn btn-primary"
-      type="submit"
-    >
-      Submit
-    </button>
-    <button
-      class="mx-3 btn btn-warning"
-      type="reset"
-    >
-      Reset
-    </button>
+        <label
+          class="form-label"
+          for="city"
+        >
+          City
+        </label>
+        <input
+          class="form-control"
+          id="city"
+          placeholder="Enter city"
+          type="text"
+        />
+      </div>
+      <button
+        class="btn btn-primary"
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        class="mx-3 btn btn-warning"
+        type="reset"
+      >
+        Reset
+      </button>
+    </form>
     <div
       class="mt-5"
     />
-  </form>
+  </div>
 </DocumentFragment>
 `;

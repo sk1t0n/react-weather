@@ -29,7 +29,7 @@ function Navbar(props) {
             {links.map(link => (
               <Link 
                 key={link.title}
-                className={`nav-link ${link.active ? 'active' : null}`}
+                className={`nav-link ${link.active ? 'active' : ''}`}
                 to={link.to}
               >
                 { link.title }
