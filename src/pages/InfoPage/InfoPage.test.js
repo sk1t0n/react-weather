@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { Loader } from './Loader';
+import { InfoPage } from './InfoPage';
 
-describe('Loader component', () => {
+describe('InfoPage component', () => {
   it('check the snapshot', () => {
-    const { asFragment } = render(<Loader />);
+    const { asFragment } = render(<InfoPage />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

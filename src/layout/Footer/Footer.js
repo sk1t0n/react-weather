@@ -1,8 +1,7 @@
-import React from 'react';
 import './styles.scss';
 import { Container } from 'react-bootstrap';
 
-function Footer() {
+const Footer = (props) => {
   const author = 'Anton Grabovsky';
   const url = 'https://github.com/sk1t0n/react-weather'
 

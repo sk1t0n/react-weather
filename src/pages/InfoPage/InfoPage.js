@@ -1,7 +1,6 @@
-import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 
-const InfoPage = props => {
+const InfoPage = (props) => {
   return (
     <div className="max-width-600_center">
       <Accordion defaultActiveKey="0">
@@ -12,7 +11,7 @@ const InfoPage = props => {
             <a href="https://www.weatherapi.com/">https://www.weatherapi.com/</a>
           </Accordion.Body>
         </Accordion.Item>
-      </Accordion>    
+      </Accordion>
     </div>
   );
 };

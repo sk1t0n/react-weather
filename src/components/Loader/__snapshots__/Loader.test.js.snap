@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly loader component 1`] = `
+exports[`Loader component check the snapshot 1`] = `
 <DocumentFragment>
   <div
     class="lds-dual-ring"

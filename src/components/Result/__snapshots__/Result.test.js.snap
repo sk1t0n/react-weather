@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshots renders correctly with default props 1`] = `
+exports[`Result component Snapshots renders correctly with default props 1`] = `
 <DocumentFragment>
   <div
     class="mt-5"
@@ -8,7 +8,7 @@ exports[`Snapshots renders correctly with default props 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Snapshots renders correctly with error 1`] = `
+exports[`Result component Snapshots renders correctly with error 1`] = `
 <DocumentFragment>
   <div
     class="mt-5"
@@ -23,7 +23,7 @@ exports[`Snapshots renders correctly with error 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Snapshots renders correctly with isLoading as true 1`] = `
+exports[`Result component Snapshots renders correctly with isLoading as true 1`] = `
 <DocumentFragment>
   <div
     class="mt-5"
@@ -35,7 +35,7 @@ exports[`Snapshots renders correctly with isLoading as true 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Snapshots renders correctly with temperature 1`] = `
+exports[`Result component Snapshots renders correctly with temperature 1`] = `
 <DocumentFragment>
   <div
     class="mt-5"

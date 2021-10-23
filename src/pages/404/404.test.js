@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { Loader } from './Loader';
+import { NotFoundPage } from './404';
 
-describe('Loader component', () => {
+describe('NotFoundPage component', () => {
   it('check the snapshot', () => {
-    const { asFragment } = render(<Loader />);
+    const { asFragment } = render(<NotFoundPage />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
