@@ -1,8 +1,9 @@
+import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import { Container, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
+export const Header: React.FC = () => {
   const links = [
     { title: 'Home', to: '/', exact: true },
     { title: 'Info', to: '/info', exact: false }
@@ -33,5 +34,3 @@ const Header = (props) => {
     </header>
   );
 }
-
-export { Header };

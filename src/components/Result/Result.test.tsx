@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { Result } from './Result';
+import { Result, Props } from './Result';
 
 describe('Result component', () => {
   describe('Snapshots', () => {
-    const defaultProps = {
+    const defaultProps: Props = {
       isLoading: false,
       error: null,
       temperature: null

@@ -1,7 +1,15 @@
+import React from 'react';
 import Alert from 'react-bootstrap/Alert';
 import { Loader } from '../Loader';
+import { Temperature } from '../Form';
 
-const Result = (props) => {
+export type Props = {
+  isLoading: boolean;
+  error: string | null;
+  temperature: Temperature | null;
+};
+
+export const Result: React.FC<Props> = (props) => {
   const { isLoading, error, temperature } = props;
 
   return (
@@ -25,5 +33,3 @@ const Result = (props) => {
     </div>
   );
 }
-
-export { Result };

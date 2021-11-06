@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Form } from './Form';
+import fetch from 'jest-fetch-mock';
 
 describe('Form component', () => {
   it('check the snapshot', () => {
@@ -9,17 +10,16 @@ describe('Form component', () => {
   });
 
   describe('Testing DOM', () => {
-    global.fetch = jest.fn();
-
-    afterEach(() => {
-      fetch.mockClear();
+    beforeEach(() => {
+      fetch.resetMocks();
     });
 
     it('submit valid data', async () => {
-      global.fetch = jest.fn(() => Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ temp_c: 0, temp_f: 32 })
-      }));
+      fetch.mockResponse(
+        JSON.stringify({ temp_c: 0, temp_f: 32 }),
+        { status: 200 }
+      );
+      fetch('http://example-api.local');
 
       render(<Form />);
       userEvent.type(
@@ -31,10 +31,8 @@ describe('Form component', () => {
     });
 
     it('submit invalid data', async () => {
-      global.fetch = jest.fn(() => Promise.resolve({
-        ok: false,
-        status: '400'
-      }));
+      fetch.mockResponse('', { status: 400 });
+      fetch('http://example-api.local');
 
       render(<Form />);
       userEvent.type(

@@ -1,6 +1,7 @@
+import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 
-const InfoPage = (props) => {
+export const InfoPage: React.FC = () => {
   return (
     <div className="max-width-600_center">
       <Accordion defaultActiveKey="0">
@@ -15,5 +16,3 @@ const InfoPage = (props) => {
     </div>
   );
 };
-
-export { InfoPage };

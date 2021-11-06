@@ -1,6 +1,7 @@
+import React from 'react';
 import './styles.css';
 
-const Loader = (props) => (
+const Loader: React.FC = () => (
   <div className="lds-dual-ring"></div>
 );
 

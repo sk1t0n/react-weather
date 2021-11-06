@@ -1,30 +1,39 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import FormBootstrap from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Result } from '../Result';
 
-const Form = (props) => {
+type ErrorMessages = {
+  [key: string]: string;
+};
+
+export type Temperature = {
+  temp_c: number;
+  temp_f: number;
+};
+
+export const Form: React.FC = () => {
   const API_KEY = process.env['REACT_APP_WEATHER_KEY'];
   const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=`;
-  const errorMessages = {
+  const errorMessages: ErrorMessages = {
     '400': 'City not found, maybe you entered the wrong city name. Correct the error and try again.'
   };
 
   let [isLoading, setLoading] = useState(false);
-  let [temperature, setTemperature] = useState(null);
-  let [error, setError] = useState(null);
-  let inputRef = useRef();
+  let [temperature, setTemperature] = useState<Temperature | null>(null);
+  let [error, setError] = useState<string | null>(null);
+  let inputRef = useRef<HTMLInputElement>(null);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(event: React.MouseEvent) {
+    event.preventDefault();
     setLoading(true);
     setError(null);
     setTemperature(null);
 
-    let value = inputRef.current.value;
-    if (value.length > 0) {
+    let value = inputRef?.current?.value;
+    if (value && value.length > 0) {
       try {
-        const response = await fetch(url+value);
+        const response = await fetch(url + value);
 
         if (!response.ok) {
           setError(errorMessages[response.status.toString()]);
@@ -36,7 +45,7 @@ const Form = (props) => {
           setTemperature({ temp_c, temp_f });
           setLoading(false);
         }
-      } catch(e) {
+      } catch(e: any) {
         setError(e.message);
         setLoading(false);
       }
@@ -70,5 +79,3 @@ const Form = (props) => {
     </div>
   );
 }
-
-export { Form };

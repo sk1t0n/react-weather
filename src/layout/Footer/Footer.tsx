@@ -1,7 +1,8 @@
+import React from 'react';
 import './styles.scss';
 import { Container } from 'react-bootstrap';
 
-const Footer = (props) => {
+export const Footer: React.FC = () => {
   const author = 'Anton Grabovsky';
   const url = 'https://github.com/sk1t0n/react-weather'
 
@@ -15,5 +16,3 @@ const Footer = (props) => {
     </footer>
   );
 }
-
-export { Footer };

@@ -1,3 +1,4 @@
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { Header } from '../../layout/Header';
@@ -11,7 +12,7 @@ import { HomePage } from '../../pages/HomePage';
 import { InfoPage } from '../../pages/InfoPage';
 import { NotFoundPage } from '../../pages/404';
 
-const App = (props) => {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Header />
